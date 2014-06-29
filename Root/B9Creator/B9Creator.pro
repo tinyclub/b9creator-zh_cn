@@ -165,6 +165,8 @@ FORMS    += mainwindow.ui \
     dlgcalbuildtable.ui \
     dlgcalprojector.ui
 
+TRANSLATIONS = B9Creator_zh_CN.ts
+
 RESOURCES += \
     b9edit/sliceeditview.qrc \
     b9edit/b9edit.qrc \

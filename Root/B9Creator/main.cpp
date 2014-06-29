@@ -38,12 +38,23 @@
 
 #include <QtGui/QApplication>
 #include <QSplashScreen>
+#include <QTextCodec>
 #include "b9nativeapp.h"
 #include <QDir>
 
 int main(int argc, char *argv[])
 {
     B9NativeApp a(argc, argv);
+
+#if 0
+    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+    QFont font1("unifont",16,50,FALSE);
+    a.setFont(font1);
+
+    QTranslator *translator = new QTranslator(0);
+    translator->load(QString("B9Creator_zh_CN.qm"), ".");
+    a.installTranslator(translator);
+#endif
 
     QPixmap pixmap(CROSS_OS_GetDirectoryFromLocationTag("APPLICATION_DIR")+"/"+"splash.png");
     QSplashScreen splash(pixmap,Qt::WindowStaysOnTopHint);

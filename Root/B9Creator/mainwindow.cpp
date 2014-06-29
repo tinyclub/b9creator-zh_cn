@@ -52,6 +52,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QTranslator *translator = new QTranslator(0);
+    translator->load(QString("B9Creator_zh_CN.qm"), ".");
+    QCoreApplication::installTranslator(translator);
+
     // Set up Identity
     QCoreApplication::setOrganizationName("B9Creations, LLC");
     QCoreApplication::setOrganizationDomain("b9creator.com");
